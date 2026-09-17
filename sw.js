@@ -4,8 +4,8 @@ const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
-  './marine_service.js',
-  './app.js'
+  './js/marine_service.js',
+  './js/app.js'
 ];
 
 self.addEventListener('install', (event) => {
