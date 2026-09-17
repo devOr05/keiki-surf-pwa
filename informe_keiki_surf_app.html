@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Informe Técnico - KEIKI Escuela de Surf PWA</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 15mm 20mm 15mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      font-size: 11pt;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .header-box {
+      background: linear-gradient(135deg, #082f49 0%, #0369a1 50%, #0284c7 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-cyan { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid #38bdf8; }
+    .badge-green { background: #dcfce7; color: #15803d; }
+    .badge-amber { background: #fef3c7; color: #b45309; }
+    .badge-rose { background: #ffe4e6; color: #be123c; }
+    
+    h1 { font-size: 24pt; margin: 10px 0 5px 0; font-weight: 900; letter-spacing: -0.5px; }
+    h2 { font-size: 15pt; color: #0369a1; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; margin-top: 25px; font-weight: 800; }
+    h3 { font-size: 12pt; color: #0f172a; margin-top: 15px; margin-bottom: 6px; font-weight: 700; }
+    
+    p { margin: 0 0 10px 0; text-align: justify; }
+    
+    .grid-2 {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .card {
+      flex: 1;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .card-title {
+      font-weight: 700;
+      color: #0369a1;
+      font-size: 10pt;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 9.5pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      color: #334155;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .feature-box {
+      border-left: 4px solid #0284c7;
+      background: #f0f9ff;
+      padding: 12px 15px;
+      border-radius: 0 8px 8px 0;
+      margin: 12px 0;
+    }
+    .alert-box {
+      border-left: 4px solid #f43f5e;
+      background: #fff1f2;
+      padding: 12px 15px;
+      border-radius: 0 8px 8px 0;
+      margin: 12px 0;
+    }
+    ul {
+      margin: 5px 0 12px 20px;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    .footer-note {
+      font-size: 8.5pt;
+      color: #64748b;
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA / ENCABEZADO -->
+  <div class="header-box">
+    <span class="badge badge-cyan">INFORME TÉCNICO & FUNCIONAL</span>
+    <h1>KEIKI Escuela de Surf</h1>
+    <p style="font-size: 13pt; margin: 0; opacity: 0.9; font-weight: 600;">
+      PWA de Reservas Dinámicas con Asistente Marino Inteligente
+    </p>
+    <p style="font-size: 9.5pt; margin-top: 12px; opacity: 0.8;">
+      <strong>Ubicación:</strong> Los Acantilados, Calle 497 Nº 316, Mar del Plata, Argentina<br>
+      <strong>Contacto Oficial:</strong> +54 9 223 525-4776 | @keikiescueladesurf<br>
+      <strong>Fecha de emisión:</strong> Septiembre 2026 | <strong>Versión:</strong> 1.0 PWA Production Ready
+    </p>
+  </div>
+
+  <!-- 1. RESUMEN EJECUTIVO -->
+  <h2>1. Resumen Ejecutivo y Diagnóstico</h2>
+  <p>
+    A diferencia de una academia de tenis, un gimnasio o un consultorio tradicional donde los horarios se definen de manera fija semanas antes, <strong>una escuela de surf opera subordinada al mar</strong>. Factores como la marea (bajando/subiendo), el tamaño del oleaje (swell), el período entre series y la dirección del viento (terral vs. onshore) determinan si un día es seguro y productivo para aprender a surfear o si representa un riesgo para los alumnos.
+  </p>
+  <div class="feature-box">
+    <strong>El dolor resuelto:</strong> Los sistemas convencionales de reservas causaban sobrecarga de cancelaciones, caos en WhatsApp y pérdida de tiempo respondiendo consultas individuales. La solución desarrollada no reemplaza el criterio del surfista local, sino que le brinda un <strong>asistente oceanográfico con IA</strong> que analiza el mar a 4 días vista y le permite habilitar turnos o suspenderlos con <strong>un solo toque</strong>.
+  </div>
+
+  <!-- 2. ARQUITECTURA DEL MOTOR METEOROLÓGICO -->
+  <h2>2. Motor Oceanográfico y Meteorológico en Tiempo Real</h2>
+  <p>
+    La aplicación se comunica de forma asíncrona con el modelo de alta resolución de <strong>Open-Meteo Marine & Forecast API</strong> para las coordenadas satelitales exactas de <strong>Los Acantilados (-38.1033, -57.5750)</strong>.
+  </p>
+
+  <div class="grid-2">
+    <div class="card">
+      <span class="card-title">🌊 Altura y Período de Olas</span>
+      <p style="font-size: 9pt; margin: 0;">
+        Evalúa el rango áureo para aprendizaje (<strong>0.6m a 1.2m</strong>). Detecta mares planos (&lt;0.4m) o rompientes peligrosas (&gt;1.6m). Además, un período &gt;8s garantiza series con canal definido para entrar sin cansarse.
+      </p>
+    </div>
+    <div class="card">
+      <span class="card-title">💨 Viento Costero (Acantilados)</span>
+      <p style="font-size: 9pt; margin: 0;">
+        La costa mira al Este/Sudeste (~110°). El sistema clasifica el viento:
+        <strong>Offshore (O, NO, SO):</strong> alisa la ola 🟢.
+        <strong>Onshore (E, SE, NE):</strong> pica el mar 🔴. Detecta ráfagas de más de 25 km/h.
+      </p>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nivel / Semáforo</th>
+        <th>Condiciones Técnicas</th>
+        <th>Impacto en la Escuela</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong style="color: #15803d;">🟢 ÓPTIMO</strong></td>
+        <td>Ola: 0.6 - 1.2m | Período &gt; 8s | Viento Offshore &lt; 20 km/h</td>
+        <td>Ideal para iniciación. La IA sugiere abrir cupos completos.</td>
+      </tr>
+      <tr>
+        <td><strong style="color: #b45309;">🟡 INTERMEDIO</strong></td>
+        <td>Ola: 1.2 - 1.5m | Viento moderado / corriente lateral</td>
+        <td>Apto para alumnos con experiencia o clases privadas asistidas.</td>
+      </tr>
+      <tr>
+        <td><strong style="color: #be123c;">🔴 DESFAVORABLE</strong></td>
+        <td>Ola &gt; 1.6m | Onshore fuerte &gt; 25 km/h | Temporal</td>
+        <td>Aviso preventivo en la PWA y sugerencia de reprogramación.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- 3. MÓDULO DEL INSTRUCTOR -->
+  <h2>3. Centro de Control del Instructor ("Asistente Inteligente")</h2>
+  <p>
+    Diseñado para ser utilizado desde el celular con una sola mano por el profesor en la playa o al despertarse antes de entrar al mar:
+  </p>
+  <ul>
+    <li>
+      <strong>Radar de Oportunidades (IA):</strong> Escanea los próximos 4 días e identifica bloques de 2 a 3 horas continuas donde el viento y el mar coinciden favorablemente. Presenta una tarjeta con el puntaje (ej. <em>Score 92/100</em>).
+    </li>
+    <li>
+      <strong>Aprobación y Apertura en 1 Toque:</strong> Al presionar <em>"Aprobar y Habilitar Turnos"</em>, el sistema crea instantáneamente los turnos con el ratio estricto de <strong>máximo 3 alumnos por instructor</strong>.
+    </li>
+    <li>
+      <strong>Botón de Emergencia ("🚨 Suspender por Mar & Avisar"):</strong> Si el viento rota al Este o el mar se rompe, el instructor toca este botón y la app cambia el estado del turno y prepara la lista de alumnos anotados con un mensaje prearmado de reprogramación para WhatsApp.
+    </li>
+    <li>
+      <strong>Logística de Equipos Previa:</strong> El profesor ve de antemano qué trajes de neopreno (S, M, L, XL) y qué tablas softboard (8'0", 8'6", 9'0") debe preparar para la jornada, ahorrando 20 minutos de espera a los alumnos.
+    </li>
+  </ul>
+
+  <!-- 4. MÓDULO DEL ALUMNO -->
+  <h2>4. Portal de Alumnos (Experiencia Mobile First)</h2>
+  <p>
+    El alumno ingresa directamente desde el enlace en la biografía de Instagram (<code>@keikiescueladesurf</code>) o por WhatsApp:
+  </p>
+  <div class="grid-2">
+    <div class="card">
+      <span class="card-title">1. Selección de Turnos Activos</span>
+      <p style="font-size: 9pt; margin: 0;">
+        Solo puede ver y seleccionar turnos previamente validados por la escuela. Contador dinámico de cupos en tiempo real (<em>"¡Queda 1 de 3 cupos!"</em>).
+      </p>
+    </div>
+    <div class="card">
+      <span class="card-title">2. Calculador Antropométrico</span>
+      <p style="font-size: 9pt; margin: 0;">
+        Al ingresar altura y peso, un algoritmo calcula la flotabilidad requerida de la tabla (litros) y el talle del traje de neopreno de 4/3mm.
+      </p>
+    </div>
+  </div>
+
+  <div class="feature-box">
+    <strong>Confirmación Automática a WhatsApp:</strong> Al enviar la reserva, el alumno genera un mensaje preformateado y verificado hacia el número de Keiki (<strong>+54 9 223 525-4776</strong>) con todos sus datos físicos y la solicitud de seña (50% vía Alias), evitando errores de transcripción.
+  </div>
+
+  <!-- 5. ESPECIFICACIONES TÉCNICAS -->
+  <h2>5. Especificaciones Técnicas y Despliegue</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Área</th>
+        <th>Tecnología / Herramienta</th>
+        <th>Beneficio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Tipo de App</strong></td>
+        <td>Progressive Web App (PWA) + Service Worker</td>
+        <td>Instalable en iPhone y Android sin pagar licencias de Apple Store o Google Play.</td>
+      </tr>
+      <tr>
+        <td><strong>Frontend</strong></td>
+        <td>HTML5 Semántico + Tailwind CSS + ES Modules</td>
+        <td>Carga ultra rápida (&lt;1 segundo), adaptable a cualquier pantalla móvil.</td>
+      </tr>
+      <tr>
+        <td><strong>Datos Satelitales</strong></td>
+        <td>Open-Meteo Marine API (Boya Mar del Plata)</td>
+        <td>Sin costos mensuales de suscripción, predicción horaria con 4 días de horizonte.</td>
+      </tr>
+      <tr>
+        <td><strong>Alojamiento Cloud</strong></td>
+        <td>Vercel Edge Network + Git</td>
+        <td>Despliegue continuo con SSL automático (HTTPS), CDN global y 99.99% uptime.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-note">
+    Documento confidencial preparado para <strong>KEIKI Escuela de Surf</strong>. Todos los derechos reservados.
+  </div>
+
+</body>
+</html>
