@@ -1,0 +1,22 @@
+{
+  "name": "KEIKI Escuela de Surf - Reservas Inteligentes",
+  "short_name": "Keiki Surf",
+  "description": "PWA de Reservas y Monitoreo Marino en Tiempo Real para Keiki Escuela de Surf (Acantilados, Mar del Plata)",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#082f49",
+  "theme_color": "#0284c7",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#082f49" />
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+  </defs>
+  <!-- Background Circle -->
+  <rect width="512" height="512" rx="128" fill="url(#oceanGrad)"/>
+  
+  <!-- Sun -->
+  <circle cx="360" cy="150" r="54" fill="#facc15" opacity="0.9" />
+
+  <!-- Wave Lines -->
+  <path d="M60,380 C140,380 180,310 250,270 C310,235 370,240 375,290 C380,330 330,340 300,320 C270,300 290,260 330,260 C270,240 210,310 140,360 C110,380 80,390 60,390 Z" fill="url(#waveGrad)"/>
+  <path d="M40,430 C120,430 180,390 260,350 C340,310 400,340 470,410 L470,460 C400,460 300,460 40,460 Z" fill="#0284c7" opacity="0.6"/>
+  <path d="M40,400 C150,400 220,350 320,330 C400,310 440,360 470,390 C420,350 360,320 280,340 C200,360 120,410 40,410 Z" fill="#ffffff" opacity="0.4"/>
+
+  <!-- Surfboard silhouette -->
+  <path d="M195,210 C215,190 260,235 285,275 C295,290 285,300 275,295 C250,280 205,235 195,210 Z" fill="#f59e0b" transform="rotate(-15 240 250)"/>
+
+  <!-- Text KEIKI -->
+  <text x="256" y="450" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="52" fill="#ffffff" letter-spacing="4">KEIKI</text>
+  <text x="256" y="480" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="20" fill="#38bdf8" letter-spacing="3">ESCUELA DE SURF</text>
+</svg>
